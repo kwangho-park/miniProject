@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 
 <hr>
-<h1>입력된 게시글</h1>
+<h1>게시글</h1>
 
 도서명(bookName) : <%=request.getParameter("bookName") %><br> 
 	

@@ -19,24 +19,25 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>write</title>
 </head>
+
 <body>
 	<%-- 기본객체를 통해 postPrint page에 파라미터 전달용--%>
 	<%-- [중요] 다양한 타입의 값을 전달가능 --%>
 	<%	request.setAttribute("date",new Date(2019-01-20));	%>
 
 
-	<h1>입력한 게시글 정보</h1>
-	
+	<h1>입력 정보</h1>
+
 	도서명(bookName) : <%=request.getParameter("bookName") %><br> 
-	
+
 	작가명(writer) 	 : <%=request.getParameter("writer") %><br>
-	
-	
+
+
 	<%-- jsp action tag로 실행흐름의 이동 --%>
 	<%-- [주의] param action tag는 String 타입의 값만 전달가능 --%>
 	<jsp:include page="list7.9_(Customizing)postPrint.jsp" flush="false">
 		<jsp:param name="number" value="1"/>
 	</jsp:include>
-	
+
 </body>
 </html>
