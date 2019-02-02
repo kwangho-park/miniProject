@@ -7,7 +7,7 @@
 	request.setCharacterEncoding("UTF-8");
 %>
 
-<jsp:useBean id="memberInfo" class="choi.MemberInfo" scope="request"/>
+<jsp:useBean id="memberInfo" class="chap08.MemberInfo" scope="request"/>
 <%--[중요] MemberInfo class로 instance를 생성하여 request의 객체에 저장 --%>
 <%--참조변수명 : memberInfo --%>
 
