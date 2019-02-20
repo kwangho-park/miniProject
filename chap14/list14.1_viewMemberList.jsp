@@ -28,10 +28,10 @@
 
 
 	// 1. jdbc driver load //
-	Class.forName("com.mysql.cj.jdbc.Driver");
+	// Class.forName("com.mysql.cj.jdbc.Driver");
 	
 	// DB 접속 경로, DB명
-	String DB_URL = "jdbc:mysql://localhost:3306/choi_jsp ? useSSL=false & characterEncoding=UTF-8 & serverTimezone=UTC " ;	
+	String DB_URL = "jdbc:mysql://localhost:3306/choi_jsp ? useSSL=false & characterEncoding=UTF-8 & serverTimezone=UTC" ;	
 	String USER_NAME = "root";		// DBMS id
 	String PASSWORD = "peterrabbit";	// DBMS pw	
 	
