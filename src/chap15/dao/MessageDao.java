@@ -16,11 +16,11 @@ public class MessageDao {
 	
 	private static MessageDao messageDao = new MessageDao();
 	
+	private MessageDao() {}
+	
 	public static MessageDao getInstance() {
 		return messageDao;
 	}
-	
-	private MessageDao() {}
 	
 	public int insert(Connection conn, Message message) throws SQLException{
 		
@@ -87,7 +87,9 @@ public class MessageDao {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT count(*) FROM guestbook_message");
 			rs.next();
-			return rs.getInt(1);
+			
+			return rs.getInt(1);		// 1 = Ã¹¹øÂ° column
+			
 		}finally {
 			JdbcUtil.close(rs);
 			JdbcUtil.close(stmt);
@@ -100,7 +102,7 @@ public class MessageDao {
 		ResultSet rs = null;
 		
 		try {
-			pstmt = conn.prepareStatement("SELECT * FROM guestbook_message" + "order by message_id DESC LIMIT ?,?");
+			pstmt = conn.prepareStatement("SELECT * FROM guestbook_message " + "ORDER BY message_id DESC LIMIT ?,?");
 			pstmt.setInt(1, firstRow - 1);
 			pstmt.setInt(2, endRow - firstRow + 1);
 			
@@ -111,8 +113,10 @@ public class MessageDao {
 				
 				do {
 					messageList.add(makeMessageFromResultSet(rs));
+					
 				}while(rs.next());
-					return messageList;
+				
+				return messageList;
 			
 			}else {
 				return Collections.emptyList();

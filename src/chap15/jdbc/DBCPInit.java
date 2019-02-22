@@ -63,10 +63,11 @@ public class DBCPInit extends HttpServlet {
 			// 4. JDBC 드라이버 등록
 			Class.forName("org.apache.commons.dbcp2.PoolingDriver");
 
-			
+			// connection pool driver 생성??
 			PoolingDriver driver = (PoolingDriver)DriverManager.getDriver("jdbc:apache:commons:dbcp:");
 			
-			driver.registerPool("chap14", connectionPool);
+			// connection pool 명칭 // 
+			driver.registerPool("choi_jsp_connPool", connectionPool);
 			
 			
 		}catch(Exception e) {
